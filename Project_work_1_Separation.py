@@ -116,6 +116,15 @@ SNR_percussive = 10*np.log10(np.sum(f_t**2)/np.sum(p_t**2))
 print 'Signal-to-noise ratio of original signal and harmonic: ' + str(SNR_harmonic)
 print 'Signal-to-noise ratio of original signal and percussive: ' + str(SNR_percussive)
 
+# If s(t) contains the monophonic mixture of the instruments and y(t) is the mixture of your
+# separated harmonic components yh(t) and percussive yp(t) components, then e(t) is the difference
+# between s(t) and y(t), i.e., e(t)=s(t)-y(t). Ideally e(t) should be close to zero all the time, 
+# and SNR very high, (+20 dB or better). Below there's an example sample of the separated harmonic and percussive components.
+y_t = h_t + p_t
+e_t = f_t - y_t
+SNR = 10*np.log10(np.sum(f_t**2)/np.sum(e_t**2))
+print 'Signal-to-noise ratio of original signal and mixture of separated harmonic and percussive components: ' + str(SNR)
+
 # Translate to wavfiles:
 audio_name = 'Harmonic_signal_rhythm_birdland.wav'
 wavfile.write(audio_name, fs, h_t)
