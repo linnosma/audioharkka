@@ -4,7 +4,7 @@
 # Project work: Implementing an audio signal processing algorithm. Algorithm based on paper: 
 # 				Separation of a monaural audio signal into harmonic/percussive components by complementary diffusion on spectrogram.
 # 				Topic 1: Separation of drums from music signals.
-#				Petri Tikka - 206059, Joonas Linnosmaa -  
+#				Petri Tikka - 206059, Joonas Linnosmaa - 218179
 
 # import Python modules
 from matplotlib.pyplot import *
